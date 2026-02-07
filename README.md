@@ -1,10 +1,18 @@
-# Iconclass-for-liturgical-furnishings - federated SPARQL query
+# Iconclass for Liturgical Furnishings
 
+Contents of this repository:
+- [dataset.csv](./dataset.csv): the dataset of Iconclass annotations in the MSS project catalogue
+
+## SPARQL query
+
+For reproducibility, we include the SPARQL query that can be executed upon the [REDACTED] endpoint in order to obtain the dataset.
+
+```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 
-SELECT DISTINCT ?value ?label ?location ?region (COUNT(?value) AS ?occorrenze)
+SELECT DISTINCT ?value ?label ?location ?region (COUNT(?value) AS ?n_occurrences)
 WHERE {
   ?subject crm:P128_carries/crm:P138_represents ?value .
   ?value skos:prefLabel ?label FILTER (lang(?label)="it") .
@@ -21,3 +29,4 @@ WHERE {
 }
 GROUP BY ?value ?label ?location ?region
 ORDER BY ?value
+```
