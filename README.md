@@ -1,7 +1,7 @@
 # Iconclass for Liturgical Furnishings
 
 Contents of this repository:
-- [dataset.csv](./dataset.csv): the dataset of Iconclass annotations in the MSS project catalogue
+- [dataset.csv](./dataset.csv): the dataset of Iconclass annotations in the MSS project catalogue, enabling a cross-regional analysis of iconographical themes in southern Italy. 
 
 ## SPARQL query
 
